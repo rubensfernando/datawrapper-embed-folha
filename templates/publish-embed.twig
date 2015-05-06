@@ -1,6 +1,6 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <p class="lead" style="margin:0">{% trans "modal / hed" %}</p>
+    <p class="lead" style="margin:0">Gerar o link do spiffy</p>
 </div>
 <div class="modal-body">
     <div class="row">
@@ -8,7 +8,10 @@
             <i class="big fa fa-code"></i>
         </div>
         <div class="loading">
-            {% trans "modal / loading" %}
+            Publicando o infográfico. Aguarde...
+        </div>
+        <div class="error hidden">
+            Erro ao publicar o infográfico.
         </div>
         <div class="span4 codes" style="display:none;">
             <div class="span4">
@@ -24,5 +27,5 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">{% trans "modal / close" %}</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
 </div>

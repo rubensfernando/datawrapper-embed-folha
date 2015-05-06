@@ -22,8 +22,6 @@ require(['dw/chart/publish'], function() {
 
             $.get('/plugins/publish-embed/publish-embed.twig', function(data) {
 
-                console.log(typeof(data));
-
                 modal = $('<div class="publish-chart-action-modal modal hide">' + data + '</div>').modal();
 
                 publish_chart(function(err) {
@@ -40,10 +38,8 @@ require(['dw/chart/publish'], function() {
                         .replace('{w}', w)
                         .replace('{h}', h);
 
-                    //console.log(textileCode, htmlCode);
-
-                    $('.codes').fadeIn('fast');
-                    $('.loading').fadeOut('fast');
+                    $('.codes').delay(1000).fadeIn('fast');
+                    $('.loading').delay(1000).fadeOut('fast');
 
                     $('textarea#textileArea').html(textileCode);
                     $('textarea#htmlArea').html(htmlCode);
