@@ -12,7 +12,7 @@ class DatawrapperPlugin_PublishEmbed extends DatawrapperPlugin {
                 'id' => 'publish-embed',
                 'title' => 'Gerar código do spiffy',
                 'icon' => 'code',
-                'order' => 350,
+                'order' => 150,
                 'banner' => array(
                     'text' => '',
                     'style' => ''
