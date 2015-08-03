@@ -43,8 +43,8 @@ require(['dw/chart/publish'], function() {
           $('.loading').delay(1000).fadeOut('fast');
 
           $('textarea#textileArea').html(textileCode);
-          $('textarea#htmlArea').html(htmlCode);
-          $('textarea#urlArea').html(urlCode);
+          // $('textarea#htmlArea').html(htmlCode);
+          // $('textarea#urlArea').html(urlCode);
         });
 
       });
