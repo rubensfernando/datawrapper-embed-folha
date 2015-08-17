@@ -25,7 +25,7 @@ require(['dw/chart/publish'], function() {
         publish_chart(function(err) {
           if (err) throw err;
 
-          var textileCode = 'p(artHtml5). "[{{titleChart}}]":{{urlChart}}?w={{w}}&h={{h}}',
+          var textileCode = 'p(folhagraficos). "[{{titleChart}}]":{{urlChart}}?w={{w}}&h={{h}}',
               htmlCode = '<iframe src="{{urlChart}}"  width="{{w}}" height="{{h}}" frameborder="0"  allowtransparency="true"  allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen"></iframe> ',
               urlCode = '{{urlChart}}';
 
