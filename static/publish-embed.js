@@ -16,7 +16,8 @@ require(['dw/chart/publish'], function() {
           chart_url = 'http://' + dw.backend.__chartCacheDomain + '/' + chart_id + '/',
           w = chart.get('metadata.publish.embed-width'),
           h = chart.get('metadata.publish.embed-height'),
-          titleChart = chart.get('title');
+          titleChart = chart.get('title'),
+          introChart = chart.get('metadata.describe.intro');
 
       $.get('/plugins/publish-embed/publish-embed.twig', function(data) {
 
@@ -25,14 +26,15 @@ require(['dw/chart/publish'], function() {
         publish_chart(function(err) {
           if (err) throw err;
 
-          var textileCode = 'p(folhagraficos). "[{{titleChart}}]":{{urlChart}}?w={{w}}&h={{h}}',
+          var textileCode = 'p(folhagraficos). "[{{titleChart}} - {{introChart}}]":{{urlChart}}?w={{w}}&h={{h}}',
               htmlCode = '<iframe src="{{urlChart}}"  width="{{w}}" height="{{h}}" frameborder="0"  allowtransparency="true"  allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen"></iframe> ',
               urlCode = '{{urlChart}}';
 
           textileCode = textileCode.replace('{{urlChart}}', chart_url)
               .replace('{{titleChart}}', titleChart)
+              .replace('{{introChart}}', introChart);
               .replace('{{w}}', w)
-              .replace('{{h}}', h);
+              .replace('{{h}}', h)
           htmlCode = htmlCode.replace('{{urlChart}}', chart_url)
               .replace('{{w}}', w)
               .replace('{{h}}', h);
@@ -48,8 +50,6 @@ require(['dw/chart/publish'], function() {
         });
 
       });
-
-      console.log(chart_url);
 
       function publish_chart(callback) {
         var pending = true;
