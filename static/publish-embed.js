@@ -32,9 +32,9 @@ require(['dw/chart/publish'], function() {
 
           textileCode = textileCode.replace('{{urlChart}}', chart_url)
               .replace('{{titleChart}}', titleChart)
-              .replace('{{introChart}}', introChart);
+              .replace('{{introChart}}', introChart)
               .replace('{{w}}', w)
-              .replace('{{h}}', h)
+              .replace('{{h}}', h);
           htmlCode = htmlCode.replace('{{urlChart}}', chart_url)
               .replace('{{w}}', w)
               .replace('{{h}}', h);
