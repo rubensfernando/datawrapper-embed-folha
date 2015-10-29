@@ -41,12 +41,21 @@ require(['dw/chart/publish'], function() {
 
           urlCode = urlCode.replace('{{urlChart}}', chart_url);
 
-          $('.codes').delay(1000).fadeIn('fast');
-          $('.loading').delay(1000).fadeOut('fast');
+          $('.codes').delay(2000).fadeIn('fast');
+          $('.loading').delay(2000).fadeOut('fast');
 
           $('textarea#textileArea').html(textileCode);
           $('textarea#htmlArea').html(htmlCode);
-          // $('textarea#urlArea').html(urlCode);
+          
+          $('textarea#textileArea').on('click', function() {
+            $(this).select();
+          });
+          $('textarea#htmlArea').on('click', function() {
+            $(this).select();
+          });
+          // $('textarea#urlArea').on('click', function() {
+          //   $(this).select();
+          // });
         });
 
       });
